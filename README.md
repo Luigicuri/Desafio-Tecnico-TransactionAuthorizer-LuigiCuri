@@ -85,6 +85,7 @@ Após autenticar, será redirecionado para a página do Swagger.
 Abra o Postman e insira um dos endpoints da API de lanches
 ### 4.2.1. Configurando Basic Auth
 Clique na aba "Authorization", selecione o tipo "Basic auth" e então, insira nos campos Username e Password os respectivos usuários e senha do Spring Security
+
 ![image](https://github.com/user-attachments/assets/c843078e-1d4c-4536-8deb-aec2473c1c4f)
 
 > Usuário: admin
