@@ -11,7 +11,7 @@ Desafio técnico para Autorização de transações de cartão de crédito.
 - MySQL
 - Spring Security
 - Swagger OpenAPI
-- Postman para requisições HTTP(recomendado)
+- Postman
 
 ## 2. Requisitos para o building e o running da aplicação:
 - MySQL para uso do banco de dados
@@ -29,6 +29,7 @@ Para Autenticação login Spring Security
 Para que a aplicação funcione por completo, é necessário criar uma Database através do MySQL e inserir o nome da mesma no arquivo de configuração ***/src/main/resources/application.properties***
 Crie uma nova database com o nome que desejar:
 
+![image](https://github.com/user-attachments/assets/f04cf66d-866c-4418-8a2a-1b12ec01e91f)
 
 
 Neste exemplo será criada a database com o nome "desafio":
