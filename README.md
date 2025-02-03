@@ -39,20 +39,33 @@ Neste exemplo será criada a database com o nome "desafio":
 Abra o arquivo de configuração do projeto spring /src/main/resources/application.properties , copie e cole estes campos de configuração abaixo. Caso a porta utilizada e o nome da database sejam diferentes, altere para os nomes e portas utilizadas no seu MySQL.
 
 ``` 
-spring.datasource.url=jdbc:mysql://localhost:3306/desafio
+spring.application.name=desafiocaju
+
+# Database Configuration
+spring.datasource.url=jdbc:mysql://localhost:3306/desafio?serverTimezone=UTC
 spring.datasource.username=root
 spring.datasource.password=localhost
-spring.jpa.show-sql=true
-
-# Database driver class
-spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
 spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 
-# JPA (Hibernate) properties
-spring.jpa.hibernate.ddl-auto=create
+# Hibernate (Disable Auto DDL - Flyway Handles Schema)
+spring.jpa.hibernate.ddl-auto=none
+spring.jpa.database-platform=org.hibernate.dialect.MySQL8Dialect
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.format_sql=true
 
-# Spring Security Properties
-logging.level.org.springframework.security=debug 
+# Ensure Flyway Runs Before Hibernate
+spring.flyway.enabled=false
+spring.flyway.baseline-on-migrate=true
+spring.flyway.validate-on-migrate=true
+spring.flyway.locations=classpath:db/migration
+
+spring.flyway.url=jdbc:mysql://localhost:3306/desafio
+spring.flyway.user=root
+spring.flyway.password=localhost
+
+# Enable Flyway Debug Logs
+logging.level.org.flywaydb=DEBUG
+
 ```
 Caso necessário, altere os campos para seus respectivos nomes de usuário e senha:
 >spring.datasource.username=root
