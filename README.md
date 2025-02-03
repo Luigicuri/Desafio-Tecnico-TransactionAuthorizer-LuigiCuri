@@ -12,7 +12,7 @@ Desafio técnico para Autorização de transações de cartão de crédito.
 - Spring Security
 - Swagger OpenAPI
 - Postman
-- Flyway (optado pela simplicidade de sintaxe ao invés do Liquibase)
+- Flyway (optado pela simplicidade em contraparte ao Liquibase)
 
 ## 2. Requisitos para o building e o running da aplicação:
 - MySQL para uso do banco de dados
