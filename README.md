@@ -68,6 +68,9 @@ Você pode utilizar a API tanto pelo Swagger, quanto pelo Postman(recomendado)
 ## 3.2. Acessando API pelo Swagger
 Para consultar os endpoints através do Swagger, acesse: http://localhost:8080/swagger-ui/index.html
 
+![image](https://github.com/user-attachments/assets/ca95fa21-2586-4252-ac68-81dffd7753b5)
+
+
 ## 4.1. Autenticação Spring Security
 É necessário realizar autenticação de login na página
 > Usuário: admin
