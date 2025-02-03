@@ -61,3 +61,30 @@ Caso necessário, altere os campos para seus respectivos nomes de usuário e sen
 ### Passo 3
 Execute o boot da aplicação, ao executar a aplicação serão criadas as tabelas e colunas no banco de dados.
 
+## 3.1. Acessando a API:
+
+Você pode utilizar a API tanto pelo Swagger, quanto pelo Postman(recomendado)
+
+### 3.2. Acessando API pelo Swagger
+Para consultar os endpoints através do Swagger, acesse: http://localhost:8080/swagger-ui/index.html
+
+#### 4.1 Autenticação Spring Security
+É necessário realizar autenticação de login na página
+> Usuário: admin
+> 
+> Senha: transaction
+
+
+Após autenticar, será redirecionado para a página do Swagger.
+
+
+### 4.2. Acessando API pelo Postman
+Abra o Postman e insira um dos endpoints da API de lanches
+#### 4.2.1. Configurando Basic Auth
+Clique na aba "Authorization", selecione o tipo "Basic auth" e então, insira nos campos Username e Password os respectivos usuários e senha do Spring Security
+
+> Usuário: admin
+> 
+> Senha: transaction
+
+
