@@ -90,4 +90,18 @@ Clique na aba "Authorization", selecione o tipo "Basic auth" e então, insira no
 > 
 > Senha: transaction
 
+## 5. Testando API. Autorizando uma Transação.
+
+Após configurarmos tudo acima, realizaremos como um exemplo a requisição POST para autorizar uma transação. 
+
+Corpo do envio:
+
+```
+{
+	"account": "123",
+	"totalAmount": 100.00,
+	"mcc": "5811",
+	"merchant": "PADARIA DO ZE               SAO PAULO BR"
+}
+``` 
 
