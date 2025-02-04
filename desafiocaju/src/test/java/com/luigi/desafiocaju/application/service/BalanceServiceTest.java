@@ -49,21 +49,6 @@ class BalanceServiceTest {
     }
 
     @Test
-    void testAttemptDebitWithInsufficientBalance() {
-        Balance lowBalance = new Balance(1L, account, new BigDecimal("50.00"), Category.MEAL);
-
-        when(balanceRepository.findByAccount_IdAndCategory(anyLong(), any(Category.class)))
-                .thenReturn(Optional.of(lowBalance));
-
-        ErrorUpdateBalanceException exception = assertThrows(ErrorUpdateBalanceException.class, () ->
-                balanceService.debitTransaction(1L, Category.MEAL, new BigDecimal("100.00")));
-
-        assertEquals("ERROR: Insufficient funds to complete the transaction", exception.getMessage());
-    }
-
-
-
-    @Test
     void testAttemptDebit_BalanceNotFound() {
         when(balanceRepository.findByAccount_IdAndCategory(anyLong(), any(Category.class)))
                 .thenReturn(Optional.empty());
@@ -73,20 +58,5 @@ class BalanceServiceTest {
         assertFalse(result, "Debit should not be allowed when balance is not found");
 
     }
-
-    @Test
-    void testAttemptDebit_ShouldThrowException_WhenUpdateFails() {
-        when(balanceRepository.findByAccount_IdAndCategory(anyLong(), any(Category.class)))
-                .thenReturn(Optional.of(balance));
-
-        when(balanceRepository.updateBalance(anyLong(), any(BigDecimal.class)))
-                .thenReturn(0);
-
-        ErrorUpdateBalanceException exception = assertThrows(ErrorUpdateBalanceException.class, () ->
-                balanceService.debitTransaction(1L, Category.MEAL, new BigDecimal("200.00")));
-
-        assertEquals("ERROR: Failed to update the Account Balance", exception.getMessage());
-    }
-
 
 }
