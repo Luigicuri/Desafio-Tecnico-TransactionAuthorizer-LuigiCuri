@@ -82,11 +82,11 @@ Caso necessário, altere os campos para seus respectivos nomes de usuário e sen
 OBS.: verifique o arquivo ***src/test/resources/application-test.properties*** caso deseje alterar alguma configuração específica.
 
 ### Passo 3
-Execute o boot da aplicação, ao executar a aplicação serão criadas as tabelas e colunas no banco de dados.
+Execute o boot da aplicação. Ao executar a aplicação serão criadas as tabelas e colunas no banco de dados. 
 
 ## 3.1. Acessando a API:
 
-Você pode utilizar a API tanto pelo Swagger, quanto pelo Postman(recomendado)
+Você pode utilizar a API tanto pelo Swagger, quanto pelo Postman(recomendado).
 
 ## 3.2. Acessando API pelo Swagger
 Para consultar os endpoints através do Swagger, acesse: http://localhost:8080/swagger-ui/index.html
