@@ -12,7 +12,7 @@ Desafio técnico para Autorização de transações de cartão de crédito.
 - Spring Security
 - Swagger OpenAPI
 - Postman
-- Flyway (optado pela simplicidade em contraparte ao Liquibase)
+- Flyway (optado por maior adequação ao projeto, comparado ao Liquibase, o qual utilizei inicialmente)
 
 ## 2. Requisitos para o building e o running da aplicação:
 - MySQL para uso do banco de dados
@@ -106,18 +106,22 @@ Clique na aba "Authorization", selecione o tipo "Basic auth" e então, insira no
 > 
 > Senha: transaction
 
-## 5. Testando API. Autorizando uma Transação.
+## 5. Testes Unitários e de Integração
 
-Após configurarmos tudo acima, realizaremos como um exemplo a requisição POST para autorizar uma transação. 
+Foram realizados testes unitários e de integração para o projeto dentro do tempo estimado. 
 
-Corpo do envio:
+## 6. Requisitos
 
-```
-{
-	"account": "123",
-	"totalAmount": 100.00,
-	"mcc": "5811",
-	"merchant": "PADARIA DO ZE               SAO PAULO BR"
-}
-``` 
+O sistema deve processar transações com base no saldo da categoria da carteira do usuário, determinado pelo MCC e nome do comerciante. Se o saldo da categoria não for suficiente, o sistema tentará usar o saldo da categoria CASH. Se ambos os saldos forem insuficientes, a transação será rejeitada.
+
+## 7. L4
+
+Para garantir a integridade dos dados em transações simultâneas (L4), foram avaliadas duas soluções:
+
+Uso de Bancos de Dados RDBMS: Bancos de dados como o MySQL oferecem dois tipos de bloqueio (pessimista e otimista) para evitar conflitos e inconsistências durante transações simultâneas.
+
+Uso de travas com ConcurrentHashMap<Long, ReentrantLock>: Inicialmente, foi implementada uma solução com travas utilizando ConcurrentHashMap<Long, ReentrantLock>. No entanto, durante os testes, essa abordagem se mostrou não tão viável para a entrega do projeto, principalmente devido a questões de desempenho e complexidade de gerenciamento.
+
+Dessa forma, optou-se por uma abordagem mais simples para bloquear transações simultâneas, utilizando as anotações do Spring, como @Transactional, que gerencia automaticamente a consistência das transações.
+
 
