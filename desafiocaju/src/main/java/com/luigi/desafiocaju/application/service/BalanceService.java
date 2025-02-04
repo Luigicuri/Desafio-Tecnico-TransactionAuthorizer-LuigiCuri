@@ -8,6 +8,7 @@ import com.luigi.desafiocaju.domain.repository.BalanceRepository;
 import com.luigi.desafiocaju.domain.repository.MerchantRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import jakarta.transaction.Transactional;
 
 import java.math.BigDecimal;
 
@@ -24,7 +25,7 @@ public class BalanceService {
         this.merchantRepository = merchantRepository;
     }
 
-
+    @Transactional
     public Boolean debitTransaction(Long accountId, Category category, BigDecimal amount) {
         try {
             return balanceRepository
