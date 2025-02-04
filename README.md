@@ -27,6 +27,7 @@ Para Autenticação login Spring Security
 
 ## 2.1. Configurando o Banco de Dados
 
+
 ### Passo 1
 Para que a aplicação funcione por completo, é necessário criar uma Database através do MySQL e inserir o nome da mesma no arquivo de configuração ***/src/main/resources/application.properties***
 Crie uma nova database com o nome que desejar:
@@ -34,6 +35,15 @@ Crie uma nova database com o nome que desejar:
 ![image](https://github.com/user-attachments/assets/f04cf66d-866c-4418-8a2a-1b12ec01e91f)
 
 Neste exemplo será criada a database com o nome "desafio":
+
+### 2.1.1. Configurando o H2
+
+Estabeleça uma conexão com o banco H2
+
+![image](https://github.com/user-attachments/assets/0f9ecbb5-89f5-47f4-b635-c930b0cd3222)
+
+## 2.2. Flyway 
+Ao rodar a aplicação (Passo 3), o Flyway criará as tabelas
 
 ### Passo 2
 Abra o arquivo de configuração do projeto spring /src/main/resources/application.properties , copie e cole estes campos de configuração abaixo. Caso a porta utilizada e o nome da database sejam diferentes, altere para os nomes e portas utilizadas no seu MySQL.
