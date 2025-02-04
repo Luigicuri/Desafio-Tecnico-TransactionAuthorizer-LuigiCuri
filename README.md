@@ -41,8 +41,6 @@ Estabeleça uma conexão com o banco H2
 
 ![image](https://github.com/user-attachments/assets/0f9ecbb5-89f5-47f4-b635-c930b0cd3222)
 
-### 2.2. Flyway 
-Ao rodar a aplicação (Passo 3), o Flyway criará as tabelas
 
 ### Passo 2
 Abra o arquivo de configuração do projeto spring /src/main/resources/application.properties , copie e cole estes campos de configuração abaixo. Caso a porta utilizada e o nome da database sejam diferentes, altere para os nomes e portas utilizadas no seu MySQL.
